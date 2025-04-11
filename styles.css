@@ -1,0 +1,11 @@
+body {
+	background-color: gray;
+}
+
+.container {
+	display: flex;
+	background-color: aqua;
+	flex-wrap: wrap;
+	height: 600px;
+	width: 600px;
+}
