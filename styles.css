@@ -4,8 +4,11 @@ body {
 
 .container {
 	display: flex;
-	background-color: aqua;
+	background-color: white;
 	flex-wrap: wrap;
 	height: 600px;
 	width: 600px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
 }

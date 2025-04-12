@@ -13,6 +13,14 @@ function createDivs(x) {
 	}
 }
 
+function randomColor() {
+	console.log('randomColor function invoked')
+	let r = Math.random() * 255;
+	let g = Math.random() * 255;
+	let b = Math.random() * 255;
+	let a = .1
+	return [r,g,b,a];
+}
 // add listener to divs for color change when hovering
 
 function createListeners() {
@@ -20,7 +28,18 @@ function createListeners() {
 
 	newDivs.forEach((newDiv) => {
 		newDiv.addEventListener("mouseover", () => {
-			newDiv.style.backgroundColor = "blue";
+			if (!newDiv.style.backgroundColor) {
+				const [r,g,b,a] = randomColor();
+				newDiv.style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+				newDiv.style.opacity = "0.1";
+			}
+			else {
+				let opacity = +(newDiv.style.opacity);
+				opacity += 0.1;
+				newDiv.style.opacity = `${opacity}`;
+			}
+			
+			
 		})
 	})
 }
